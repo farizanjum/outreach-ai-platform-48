@@ -40,10 +40,10 @@ const Admin = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SidebarProvider>
-        <div className="flex w-full min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="flex w-full min-h-screen">
           <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-          <SidebarInset className="flex-1 bg-transparent">
-            <div className="p-6 bg-transparent">
+          <SidebarInset className="flex-1 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+            <div className="p-6">
               <div className="mb-6">
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Admin Dashboard
