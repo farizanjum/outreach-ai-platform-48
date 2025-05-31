@@ -61,19 +61,19 @@ export function CreatorSidebar() {
     },
     {
       title: "Contracts",
-      url: "/contracts",
+      url: "/dashboard/contracts",
       icon: FileText,
       badge: null
     },
     {
       title: "Payments",
-      url: "/payments",
+      url: "/dashboard/payments",
       icon: CreditCard,
       badge: null
     },
     {
       title: "Performance",
-      url: "/performance",
+      url: "/dashboard/performance",
       icon: BarChart3,
       badge: null
     }
@@ -85,8 +85,8 @@ export function CreatorSidebar() {
   };
 
   return (
-    <Sidebar className="bg-gradient-to-b from-slate-900 to-purple-900 border-r border-white/10">
-      <SidebarHeader className="p-6">
+    <Sidebar className="bg-slate-900 border-r border-slate-700 text-white">
+      <SidebarHeader className="p-6 bg-slate-900">
         <div className="flex items-center space-x-3 mb-4">
           <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
             <Sparkles className="w-6 h-6 text-white" />
@@ -110,13 +110,13 @@ export function CreatorSidebar() {
             <p className="text-white font-medium text-sm truncate">{creatorData.name}</p>
             <p className="text-gray-400 text-xs truncate">{creatorData.email}</p>
           </div>
-          <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1">
+          <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white hover:bg-white/10 p-1">
             <Bell className="w-4 h-4" />
           </Button>
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-3">
+      <SidebarContent className="px-3 bg-slate-900">
         <SidebarGroup>
           <SidebarGroupLabel className="text-gray-400 text-xs uppercase tracking-wider mb-2">
             Navigation
@@ -137,9 +137,9 @@ export function CreatorSidebar() {
                           : 'text-gray-300 hover:text-white hover:bg-white/5'
                       }`}
                     >
-                      <button onClick={() => navigate(item.url)} className="flex items-center space-x-3 w-full">
+                      <button onClick={() => navigate(item.url)} className="flex items-center space-x-3 w-full text-left">
                         <IconComponent className="w-5 h-5" />
-                        <span className="flex-1 text-left">{item.title}</span>
+                        <span className="flex-1">{item.title}</span>
                         {item.badge && (
                           <Badge className="bg-red-500 text-white text-xs min-w-[20px] h-5 flex items-center justify-center">
                             {item.badge}
@@ -155,7 +155,7 @@ export function CreatorSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="p-3">
+      <SidebarFooter className="p-3 bg-slate-900">
         <Button 
           variant="ghost" 
           onClick={handleLogout}
