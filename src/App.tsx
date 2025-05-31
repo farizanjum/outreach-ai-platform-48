@@ -10,7 +10,6 @@ import Dashboard from "./pages/Dashboard";
 import CreatorProfile from "./pages/CreatorProfile";
 import CreatorInbox from "./pages/CreatorInbox";
 import Discover from "./pages/Discover";
-import CreatorProfile as CreatorProfileView from "./pages/CreatorProfile";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
 import CRM from "./pages/CRM";
@@ -36,7 +35,7 @@ const App = () => (
           <Route path="/dashboard/crm" element={<CreatorInbox />} />
           <Route path="/dashboard/crm/:id" element={<CRM />} />
           <Route path="/discover" element={<Discover />} />
-          <Route path="/creator/:id" element={<CreatorProfileView />} />
+          <Route path="/creator/:id" element={<CreatorProfile />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/campaign/:id" element={<CampaignDetail />} />
           <Route path="/crm/:id" element={<CRM />} />
