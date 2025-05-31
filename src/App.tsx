@@ -10,6 +10,7 @@ import Discover from "./pages/Discover";
 import CreatorProfile from "./pages/CreatorProfile";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
+import CRM from "./pages/CRM";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/creator/:id" element={<CreatorProfile />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/campaign/:id" element={<CampaignDetail />} />
+          <Route path="/crm/:id" element={<CRM />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
