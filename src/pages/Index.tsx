@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Users, Target, TrendingUp, Zap, Sparkles, Rocket, Globe, Check, Star, MessageSquare, Mail, Phone, Bot, FileText, CreditCard, BarChart3, Search, Wand2 } from "lucide-react";
 
 const Index = () => {
@@ -61,7 +62,7 @@ const Index = () => {
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
             From Creator Search to
             <br />
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
               Contracts, Powered by AI
             </span>
           </h1>
@@ -424,7 +425,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Keep existing about section */}
+      {/* Keep existing about section with highlighted stats */}
       <div id="about" className="relative z-10 container mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -441,11 +442,12 @@ const Index = () => {
                 { number: "$10M+", label: "Campaign Budget Managed" },
                 { number: "95%", label: "Success Rate" }
               ].map((stat, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                <div key={index} className="flex items-center space-x-4 group">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent group-hover:from-yellow-400 group-hover:to-orange-400 transition-all duration-300 transform group-hover:scale-110">
                     {stat.number}
                   </div>
-                  <div className="text-gray-300">{stat.label}</div>
+                  <div className="text-gray-300 group-hover:text-white transition-colors duration-300">{stat.label}</div>
+                  <div className="w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               ))}
             </div>
@@ -464,7 +466,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* FAQ Section */}
+      {/* Updated FAQ Section with Accordion */}
       <div className="relative z-10 container mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -475,34 +477,53 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
-          {[
-            {
-              question: "How do you verify creators on your platform?",
-              answer: "We use a comprehensive verification process that includes social media authentication, engagement analysis, and manual review to ensure all creators are genuine and active."
-            },
-            {
-              question: "What platforms do you support?",
-              answer: "InfluenceHub supports all major social media platforms including Instagram, TikTok, YouTube, Twitter, and emerging platforms. We continuously add new platforms based on market demand."
-            },
-            {
-              question: "How does pricing work for campaigns?",
-              answer: "Campaign costs depend on creator rates, campaign scope, and duration. Our platform provides transparent pricing and helps you budget effectively with detailed cost breakdowns."
-            },
-            {
-              question: "Can I track campaign performance in real-time?",
-              answer: "Yes! Our analytics dashboard provides real-time tracking of all campaign metrics including reach, engagement, conversions, and ROI across all platforms and creators."
-            },
-            {
-              question: "Do you offer support for campaign management?",
-              answer: "Absolutely. We provide comprehensive support including campaign strategy, creator matching, content approval workflows, and dedicated account management for enterprise clients."
-            }
-          ].map((faq, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <h3 className="text-xl font-semibold text-white mb-3">{faq.question}</h3>
-              <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
-            </div>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 px-6">
+              <AccordionTrigger className="text-xl font-semibold text-white hover:text-purple-300 transition-colors duration-300">
+                How do you verify creators on your platform?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 leading-relaxed pb-4">
+                We use a comprehensive verification process that includes social media authentication, engagement analysis, and manual review to ensure all creators are genuine and active.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 px-6">
+              <AccordionTrigger className="text-xl font-semibold text-white hover:text-purple-300 transition-colors duration-300">
+                What platforms do you support?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 leading-relaxed pb-4">
+                InfluenceHub supports all major social media platforms including Instagram, TikTok, YouTube, Twitter, and emerging platforms. We continuously add new platforms based on market demand.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 px-6">
+              <AccordionTrigger className="text-xl font-semibold text-white hover:text-purple-300 transition-colors duration-300">
+                How does pricing work for campaigns?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 leading-relaxed pb-4">
+                Campaign costs depend on creator rates, campaign scope, and duration. Our platform provides transparent pricing and helps you budget effectively with detailed cost breakdowns.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 px-6">
+              <AccordionTrigger className="text-xl font-semibold text-white hover:text-purple-300 transition-colors duration-300">
+                Can I track campaign performance in real-time?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 leading-relaxed pb-4">
+                Yes! Our analytics dashboard provides real-time tracking of all campaign metrics including reach, engagement, conversions, and ROI across all platforms and creators.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 px-6">
+              <AccordionTrigger className="text-xl font-semibold text-white hover:text-purple-300 transition-colors duration-300">
+                Do you offer support for campaign management?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 leading-relaxed pb-4">
+                Absolutely. We provide comprehensive support including campaign strategy, creator matching, content approval workflows, and dedicated account management for enterprise clients.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
 
