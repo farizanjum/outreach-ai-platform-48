@@ -9,6 +9,10 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import CreatorProfile from "./pages/CreatorProfile";
 import CreatorInbox from "./pages/CreatorInbox";
+import CreatorContracts from "./pages/CreatorContracts";
+import CreatorPayments from "./pages/CreatorPayments";
+import CreatorPerformance from "./pages/CreatorPerformance";
+import CreatorSummary from "./pages/CreatorSummary";
 import Discover from "./pages/Discover";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
@@ -30,10 +34,18 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          
+          {/* Creator Dashboard Routes */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/profile" element={<CreatorProfile />} />
           <Route path="/dashboard/crm" element={<CreatorInbox />} />
           <Route path="/dashboard/crm/:id" element={<CRM />} />
+          <Route path="/dashboard/contracts" element={<CreatorContracts />} />
+          <Route path="/dashboard/payments" element={<CreatorPayments />} />
+          <Route path="/dashboard/performance" element={<CreatorPerformance />} />
+          <Route path="/dashboard/summary" element={<CreatorSummary />} />
+          
+          {/* Brand/Agency Routes */}
           <Route path="/discover" element={<Discover />} />
           <Route path="/creator/:id" element={<CreatorProfile />} />
           <Route path="/campaigns" element={<Campaigns />} />
@@ -42,8 +54,11 @@ const App = () => (
           <Route path="/contracts" element={<Contracts />} />
           <Route path="/payments" element={<Payments />} />
           <Route path="/performance" element={<Performance />} />
+          
+          {/* Admin Routes */}
           <Route path="/admin" element={<Admin />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          
+          {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

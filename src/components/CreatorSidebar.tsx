@@ -25,7 +25,8 @@ import {
   BarChart3, 
   LogOut,
   Sparkles,
-  Bell
+  Bell,
+  Trophy
 } from "lucide-react";
 
 export function CreatorSidebar() {
@@ -42,7 +43,7 @@ export function CreatorSidebar() {
 
   const menuItems = [
     {
-      title: "My Dashboard",
+      title: "Dashboard",
       url: "/dashboard",
       icon: Home,
       badge: null
@@ -75,6 +76,12 @@ export function CreatorSidebar() {
       title: "Performance",
       url: "/dashboard/performance",
       icon: BarChart3,
+      badge: null
+    },
+    {
+      title: "Success Overview",
+      url: "/dashboard/summary",
+      icon: Trophy,
       badge: null
     }
   ];
