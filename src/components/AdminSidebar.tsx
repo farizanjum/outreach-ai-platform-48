@@ -12,7 +12,7 @@ import {
   SidebarHeader,
   SidebarFooter,
 } from '@/components/ui/sidebar';
-import { Users, Campaign, Activity, Shield, Home } from 'lucide-react';
+import { Users, Megaphone, Activity, Shield, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ const menuItems = [
   {
     id: 'campaigns',
     title: 'Campaign Oversight',
-    icon: Campaign,
+    icon: Megaphone,
     description: 'Monitor all campaigns'
   },
   {
