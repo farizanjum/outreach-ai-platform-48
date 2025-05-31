@@ -14,6 +14,7 @@ import CRM from "./pages/CRM";
 import Contracts from "./pages/Contracts";
 import Payments from "./pages/Payments";
 import Performance from "./pages/Performance";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
