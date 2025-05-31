@@ -12,6 +12,7 @@ import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
 import CRM from "./pages/CRM";
 import Contracts from "./pages/Contracts";
+import Payments from "./pages/Payments";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/campaign/:id" element={<CampaignDetail />} />
           <Route path="/crm/:id" element={<CRM />} />
           <Route path="/contracts" element={<Contracts />} />
+          <Route path="/payments" element={<Payments />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
