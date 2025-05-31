@@ -44,8 +44,8 @@ const menuItems = [
 
 export const AdminSidebar = ({ activeTab, setActiveTab }: AdminSidebarProps) => {
   return (
-    <Sidebar className="border-r border-white/20">
-      <SidebarHeader className="p-4">
+    <Sidebar className="border-r border-white/20 bg-black/40 backdrop-blur-lg">
+      <SidebarHeader className="p-4 bg-transparent">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
             <Shield className="w-6 h-6 text-white" />
@@ -57,7 +57,7 @@ export const AdminSidebar = ({ activeTab, setActiveTab }: AdminSidebarProps) => 
         </div>
       </SidebarHeader>
 
-      <SidebarContent>
+      <SidebarContent className="bg-transparent">
         <SidebarGroup>
           <SidebarGroupLabel className="text-gray-300">Management</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -67,7 +67,7 @@ export const AdminSidebar = ({ activeTab, setActiveTab }: AdminSidebarProps) => 
                   <SidebarMenuButton
                     onClick={() => setActiveTab(item.id)}
                     isActive={activeTab === item.id}
-                    className="w-full justify-start text-white hover:bg-white/10"
+                    className="w-full justify-start text-white hover:bg-white/10 data-[active=true]:bg-white/20"
                   >
                     <item.icon className="w-4 h-4" />
                     <span>{item.title}</span>
@@ -79,8 +79,8 @@ export const AdminSidebar = ({ activeTab, setActiveTab }: AdminSidebarProps) => 
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="p-4">
-        <Button variant="outline" asChild className="w-full">
+      <SidebarFooter className="p-4 bg-transparent">
+        <Button variant="outline" asChild className="w-full border-white/20 text-white hover:bg-white/10">
           <Link to="/">
             <Home className="w-4 h-4 mr-2" />
             Back to Platform
