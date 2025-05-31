@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -132,8 +133,11 @@ const CreatorCard: React.FC<CreatorCardProps> = ({ creator }) => {
             variant="outline" 
             size="sm" 
             className="flex-1 border-white/20 text-white hover:bg-white/10"
+            asChild
           >
-            View Profile
+            <Link to={`/creator/${creator.id}`}>
+              View Profile
+            </Link>
           </Button>
           <Button 
             size="sm" 
