@@ -5,12 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Zap, Users, Building, Palette, Sparkles, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
     console.log("Initiating Google Login...");
@@ -24,10 +25,28 @@ const Login = () => {
   const handleRoleSelection = (role: string) => {
     setSelectedRole(role);
     console.log(`Role selected: ${role}`);
+    
     toast({
       title: "Role Selected",
       description: `Welcome as ${role}! Redirecting to dashboard...`,
     });
+
+    // Redirect based on role after a short delay
+    setTimeout(() => {
+      switch (role) {
+        case 'creator':
+          navigate('/discover');
+          break;
+        case 'brand':
+          navigate('/campaigns');
+          break;
+        case 'agency':
+          navigate('/crm/1'); // Default to first CRM instance
+          break;
+        default:
+          navigate('/');
+      }
+    }, 1500);
   };
 
   const roles = [
@@ -155,17 +174,6 @@ const Login = () => {
                   </button>
                 );
               })}
-              
-              <div className="pt-4">
-                <Button 
-                  disabled={!selectedRole}
-                  onClick={() => selectedRole && handleRoleSelection(selectedRole)}
-                  className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 disabled:opacity-50 h-14 text-lg shadow-[0_8px_32px_0_rgba(139,69,255,0.3)] hover:shadow-[0_12px_40px_0_rgba(139,69,255,0.4)] transition-all duration-300"
-                  size="lg"
-                >
-                  Continue to Dashboard
-                </Button>
-              </div>
             </CardContent>
           </Card>
         )}
