@@ -35,7 +35,7 @@ const Login = () => {
     setTimeout(() => {
       switch (role) {
         case 'creator':
-          navigate('/discover');
+          navigate('/dashboard');
           break;
         case 'brand':
           navigate('/campaigns');

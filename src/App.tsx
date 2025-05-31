@@ -6,8 +6,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
-import Discover from "./pages/Discover";
+import Dashboard from "./pages/Dashboard";
 import CreatorProfile from "./pages/CreatorProfile";
+import CreatorInbox from "./pages/CreatorInbox";
+import Discover from "./pages/Discover";
+import CreatorProfile as CreatorProfileView from "./pages/CreatorProfile";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
 import CRM from "./pages/CRM";
@@ -28,8 +31,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/profile" element={<CreatorProfile />} />
+          <Route path="/dashboard/crm" element={<CreatorInbox />} />
+          <Route path="/dashboard/crm/:id" element={<CRM />} />
           <Route path="/discover" element={<Discover />} />
-          <Route path="/creator/:id" element={<CreatorProfile />} />
+          <Route path="/creator/:id" element={<CreatorProfileView />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/campaign/:id" element={<CampaignDetail />} />
           <Route path="/crm/:id" element={<CRM />} />
