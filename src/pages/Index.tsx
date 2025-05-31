@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, MessageSquare, FileContract, CreditCard, TrendingUp, Users, Zap, Shield } from "lucide-react";
+import { Search, MessageSquare, FileText, CreditCard, TrendingUp, Users, Zap, Shield } from "lucide-react";
 
 const Index = () => {
   return (
@@ -126,7 +125,7 @@ const Index = () => {
               <CardContent>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li className="flex items-center"><Shield className="w-4 h-4 mr-2 text-orange-400" />Secure transactions</li>
-                  <li className="flex items-center"><FileContract className="w-4 h-4 mr-2 text-orange-400" />Milestone payments</li>
+                  <li className="flex items-center"><FileText className="w-4 h-4 mr-2 text-orange-400" />Milestone payments</li>
                   <li className="flex items-center"><TrendingUp className="w-4 h-4 mr-2 text-orange-400" />Performance tracking</li>
                 </ul>
               </CardContent>
